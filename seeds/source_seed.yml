@@ -3,5 +3,75 @@ sources:
   - name: seeds
     schema: "{{target.schema}}_SEED_DATA"
     tables:
-      - name: ABC_Bank_SECURITY_INFO
       - name: ABC_Bank_EXCHANGE_INFO
+        description: ""
+        columns:
+          - name: NAME
+            data_type: varchar
+            description: ""
+          - name: ID
+            data_type: varchar
+            description: ""
+          - name: COUNTRY
+            data_type: varchar
+            description: ""
+          - name: CITY
+            data_type: varchar
+            description: ""
+          - name: ZONE
+            data_type: varchar
+            description: ""
+          - name: DELTA
+            data_type: float
+            description: ""
+          - name: DST_PERIOD
+            data_type: varchar
+            description: ""
+          - name: OPEN
+            data_type: varchar
+            description: ""
+          - name: CLOSE
+            data_type: varchar
+            description: ""
+          - name: LUNCH
+            data_type: varchar
+            description: ""
+          - name: OPEN_UTC
+            data_type: varchar
+            description: ""
+          - name: CLOSE_UTC
+            data_type: varchar
+            description: ""
+          - name: LUNCH_UTC
+            data_type: varchar
+            description: ""
+          - name: LOAD_TS
+            data_type: timestamp_ntz
+            description: ""
+
+      - name: ABC_Bank_SECURITY_INFO
+        description: ""
+        columns:
+          - name: SECURITY_CODE
+            data_type: varchar
+            description: ""
+          - name: SECURITY_NAME
+            data_type: varchar
+            description: ""
+          - name: SECTOR
+            data_type: varchar
+            description: ""
+          - name: INDUSTRY
+            data_type: varchar
+            description: ""
+          - name: COUNTRY
+            data_type: varchar
+            description: ""
+          - name: EXCHANGE
+            data_type: varchar
+            description: ""
+          - name: LOAD_TS
+            data_type: timestamp_ntz
+            description: ""
+      - name: ABC_Bank_COUNTRY_ISO
+      - name: ABC_Bank_CURRENCY_ISO
