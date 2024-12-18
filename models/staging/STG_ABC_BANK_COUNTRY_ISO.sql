@@ -20,7 +20,7 @@ src_data as (
 
 final as (
     SELECT
-        concat_ws('|', COUNTRY_NAME, COUNTRY_CODE_2_LETTER, COUNTRY_CODE_3_LETTER) as EXCHANGE_HKEY
+        {{ dbt_utils.generate_surrogate_key(['COUNTRY_NAME', 'COUNTRY_CODE_2_LETTER', 'COUNTRY_CODE_3_LETTER']) }} as EXCHANGE_HKEY
         , * EXCLUDE LOAD_TS
         , LOAD_TS as LOAD_TS_UTC
     FROM src_data

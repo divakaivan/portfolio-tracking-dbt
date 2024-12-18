@@ -49,8 +49,8 @@ with_default_record as(
 
 hashed as (
     SELECT
-        concat_ws('|', ID) as EXCHANGE_HKEY
-        , concat_ws('|', NAME, COUNTRY, CITY, ZONE, DELTA, DST_PERIOD, OPEN, CLOSE, LUNCH, OPEN_UTC, CLOSE_UTC, LUNCH_UTC) as EXCHANGE_HDIFF
+        {{ dbt_utils.generate_surrogate_key(['ID']) }} as EXCHANGE_HKEY
+        , {{ dbt_utils.generate_surrogate_key(['NAME', 'COUNTRY', 'CITY', 'ZONE', 'DELTA', 'DST_PERIOD', 'OPEN', 'CLOSE', 'LUNCH', 'OPEN_UTC', 'CLOSE_UTC', 'LUNCH_UTC']) }} as EXCHANGE_HDIFF
         , * EXCLUDE LOAD_TS
         , LOAD_TS as LOAD_TS_UTC
     FROM with_default_record
