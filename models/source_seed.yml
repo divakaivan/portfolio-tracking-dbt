@@ -50,28 +50,14 @@ sources:
             description: ""
 
       - name: ABC_Bank_SECURITY_INFO
-        description: ""
         columns:
           - name: SECURITY_CODE
-            data_type: varchar
-            description: ""
+            tests:
+              - not_null
+              - unique
           - name: SECURITY_NAME
-            data_type: varchar
-            description: ""
-          - name: SECTOR
-            data_type: varchar
-            description: ""
-          - name: INDUSTRY
-            data_type: varchar
-            description: ""
-          - name: COUNTRY
-            data_type: varchar
-            description: ""
-          - name: EXCHANGE
-            data_type: varchar
-            description: ""
-          - name: LOAD_TS
-            data_type: timestamp_ntz
-            description: ""
+            tests:
+              - not_null
+              - not_empty
       - name: ABC_Bank_COUNTRY_ISO
       - name: ABC_Bank_CURRENCY_ISO
